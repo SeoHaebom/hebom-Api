@@ -90,7 +90,7 @@
 ## Cara Ganti ApiKey Gimana?
 Cara Mengganti Nya Cukup Gampang, Kalian Hanya Perlu Untuk Mengganti Syntax Di Bawah Ini
 ```js
-if(apikeyInput != 'MASUKKAN_NAMA_APIKEY') return res.json(loghandler.invalidKey)
+if(apikeyInput != 'SiscaKohel') return res.json(loghandler.invalidKey)
 ```
 Atau
 
