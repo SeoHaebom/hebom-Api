@@ -90,12 +90,12 @@
 ## Cara Ganti ApiKey Gimana?
 Cara Mengganti Nya Cukup Gampang, Kalian Hanya Perlu Untuk Mengganti Syntax Di Bawah Ini
 ```js
-if(apikeyInput != 'MASUKKAN_NAMA_APIKEY') return res.json(loghandler.invalidKey)
+if(apikeyInput != 'Taesung') return res.json(loghandler.invalidKey)
 ```
 Atau
 
 ```js
-if(apikey != 'MASUKAN_NAMA_APIKEY') return res.json(loghandler.invalidKey)
+if(apikey != 'Taesung') return res.json(loghandler.invalidKey)
 ```
 
 ### Berikut Adalah Cara Deploy API Ini Ke Dalam Heroku
@@ -114,7 +114,7 @@ if(apikey != 'MASUKAN_NAMA_APIKEY') return res.json(loghandler.invalidKey)
 - 100 % Open Source
 - Like This Repository Okeee 🎉
 - Note : Jangan Memperjual Belikan API Ini, Jika anda ingin memakai nya dan meRename dengan nama kalian Tidak Masalah, karena ini adalah Project API Open Source
-- Untuk Melihat Update Silakan Ganti Branch Ke "update1"
+- Untuk Melihat Update Silakan Ganti Branch Ke "update3"
 
 
 ### Link Zhirrr API Packages
