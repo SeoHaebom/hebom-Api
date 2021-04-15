@@ -770,7 +770,7 @@ router.get('/kisahnabi', async (req, res, next) => {
 		})
 })
 
-router.get('/pinterest', (req, res) => {
+router.get('/api/pinterest', (req, res) => {
 	let query = req.query.query;
 	apikeyInput = req.query.apikey;
 	if(!query || query == undefined)
