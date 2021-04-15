@@ -1,187 +1,122 @@
+
 <!DOCTYPE html>
-<html lang="en">
+	<html>
+<head>
+<title> Haebom Rest Api </title> 
+<meta property="og:image" content="https://i.ibb.co/b2jtj55/3ff5e413b790.jpg" /> 
+<meta property="og:title" content="bukan web bokep🤬😡" /> <meta property="og:description" content="Haebom Free Res APIs"/> 
+<link rel="shortcut icon" href="https://i.ibb.co/b2jtj55/3ff5e413b790.jpg" type="image/x-icon" />
+</head>
+<body>
+	<!DOCTYPE html><html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Jabami Rest API</title>
+  <!--link rel="stylesheet" href="style.css"-->
 
-  <head>
+</head>
+<body>
+<<style>
+    @import url('https://fonts.googleapis.com/css?family=Barlow');
+    body {
+      background: #310444 url(https://i.ibb.co/b2jtj55/3ff5e413b790.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      font-family: 'Barlow', sans-serif;
+    }* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Alata', sans-serif;
+  background-color: #001217;
+  color: #eee;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container p {
+  font-size: 3rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.container p span.typed-text {
+  font-weight: normal;
+  color: #DDFFFE;
+}
+.container p span.TypeCursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container p span.TypeCursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
+@media (max-width:750px) {
+  .container p {
+    font-size: 2rem;
+  }
+}
+</style>
+<div class="container">
+    <p><span class="typed-text"></span><span class="TypeCursor">&nbsp;</span><br><a href="https://meiky-xyz.herokuapp.com/api">click docs</a></p>
+  </div>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+<script>
+const TypingText = document.querySelector(".typed-text");
+const AutoTyping = document.querySelector(".TypeCursor");
 
-    <title>Zhirrr's Web</title>
-<!--
-Elegance Template
-https://templatemo.com/tm-528-elegance
--->
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="home/css/bootstrap.min.css">
+const textArray = ["Hello, Welcome To Haebon Rest Free Rest Api"];
+const typingDelay = 200;
+const erasingDelay = 100;
+const newTextDelay = 2000; 
+let textArrayIndex = 0;
+let charIndex = 0;
 
-    <link rel="stylesheet" type="text/css" href="home/css/font-awesome.css">
-
-    <link rel="stylesheet" type="text/css" href="home/css/fullpage.min.css">
-
-    <link rel="stylesheet" type="text/css" href="home/css/owl.carousel.css">
-
-    <link rel="stylesheet" href="home/css/animate.css">
-
-    <link rel="stylesheet" href="home/css/templatemo-style.css">
-
-    <link rel="stylesheet" href="home/css/responsive.css">
-
-    </head>
+function type() {
+  if (charIndex < textArray[textArrayIndex].length) {
+    if(!AutoTyping.classList.contains("typing")) AutoTyping.classList.add("typing");
+    TypingText.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
     
-    <body>
-    
-    <div id="video">
-        <div class="preloader">
-            <div class="preloader-bounce">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+  } 
+  else {
+    AutoTyping.classList.remove("typing");
+      setTimeout(erase, newTextDelay);
+  }
+}
+document.addEventListener("DOMContentLoaded", function() { 
+  if(textArray.length) setTimeout(type, newTextDelay + 250);
+});
+</script>
 
-        <header id="header">
-            <div class="container-fluid">
-                <div class="navbar">
-                    <a href="#" id="logo" title="Elegance by TemplateMo">
-                        My Web
-                    </a>
-                    <div class="navigation-row">
-                        <nav id="navigation">
-                            <button type="button" class="navbar-toggle"> <i class="fa fa-bars"></i> </button>
-                            <div class="nav-box navbar-collapse">
-                                <ul class="navigation-menu nav navbar-nav navbars" id="nav">
-                                    <li data-menuanchor="slide01" class="active"><a href="#slide01">Home</a></li>
-                                    <li data-menuanchor="slide02"><a href="/api"> My Rest API</a></li>
-                                    <li data-menuanchor="slide03"><a href="https://blog-zahirr-web.vercel.app/">My Blog</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
+</body>
+});
 
-        <video autoplay muted loop id="myVideo">
-          <source src="home/images/video-bg.mp4" type="video/mp4">
-        </video>
-
-        <div id="fullpage" class="fullpage-default">
-
-            <div class="section animated-row" data-section="slide01">
-                <div class="section-inner">
-                    <div class="welcome-box">
-                        <span class="welcome-first animate" data-animate="fadeInUp">Hello, welcome to</span>
-                        <span class="welcome-title animate" data-animate="fadeInUp">Zhirrr's Web</span>
-                        <p class="animate" data-animate="fadeInUp">Zhirrr's Web menyajikan banyak sekali manfaat bagi kalian semua para Coders, mulai dari puluhan API Gratis, juga Informasi/Cara2 unik untuk Kalian !</p>
-                        <div class="scroll-down next-section animate data-animate="fadeInUp""><img src="home/images/mouse-scroll.png" alt=""><span>Scroll Down</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section animated-row" data-section="slide02">
-                <div class="section-inner">
-                    <div class="about-section">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 wide-col-laptop">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="about-contentbox">
-                                            <div class="animate" data-animate="fadeInUp">
-                                                <span>About Me</span>
-                                                <h2>Siapa Sih Author Nya?</h2>
-                                                <p>Perkenalkan nama saya <strong> Zahir Hadi Athallah </strong>Umur saya baru 14 tahun dan masih menjadi seorang pelajar di <strong>SMPN 279 Jakarta Utara</strong>, Senang dari kecil tentang programming, Belajar programming Otodidak, mulai dari YouTube dan web2 lainnya, Bahasa pemrograman yang saya ketahui hanya sedikit, yaitu (HTML/CSS/JavaScript), Python, Java, dan C#</p>
-                                            </div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <figure class="about-img animate" data-animate="fadeInUp"><img src="home/images/profile-girl.jpg" class="rounded" alt=""></figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section animated-row" data-section="slide04">
-                <div class="section-inner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-7 wide-col-laptop">
-                            <div class="title-block animate" data-animate="fadeInUp">
-                                <span>Bahasa Pemrograman</span>
-                                <h2>Yang Dikuasai</h2>
-                            </div>
-                            <div class="skills-row animate" data-animate="fadeInDown">
-                                <div class="row">
-                                    <div class="col-md-8 offset-md-2">   
-                                        <div class="skill-item">
-                                            <h6>HTML/CSS/JavaScript</h6>
-                                            <div class="skill-bar">
-                                                <span>95%</span>
-                                                <div class="filled-bar-2"></div>
-                                            </div>          
-                                        </div>
-                                        <div class="skill-item">
-                                            <h6>Python/Java/C#</h6>
-                                            <div class="skill-bar">
-                                                <span>70%</span>
-                                                <div class="filled-bar"></div>
-                                            </div>          
-                                        </div>
-                                        </div>                   
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="social-icons">
-            <div class="text-right">
-                <ul class="social-icons">
-                    <li><a href="https://instagram.com/zhirr_ajalah" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>  
-
-    <script src="home/js/jquery.js"></script>
-
-    <script src="home/js/bootstrap.min.js"></script>
-
-    <script src="home/js/fullpage.min.js"></script>
-
-    <script src="home/js/scrolloverflow.js"></script>
-
-    <script src="home/js/owl.carousel.min.js"></script>
-
-    <script src="home/js/jquery.inview.min.js"></script>
-
-    <script src="home/js/form.js"></script>
-
-    <script src="home/js/custom.js"></script>
+</script>
 
 
-  </body>
+
+</body>
+
 </html>
