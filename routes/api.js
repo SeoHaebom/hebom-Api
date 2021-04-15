@@ -29,6 +29,7 @@ var options = require(__path + '/lib/options.js');
 var {
 	Vokal,
 	Base,
+	Pinterest, 
 	Searchnabi,
     Gempa
 } = require('./../lib');
@@ -767,6 +768,25 @@ router.get('/kisahnabi', async (req, res, next) => {
 			console.log('Error :', color(e, 'red'))
 			res.json(loghandler.error)
 		})
+})
+
+router.get('/pinterest', (req, res) => {
+	let query = req.query.query;
+	apikeyInput = req.query.apikey;
+	if(!query || query == undefined)
+	return res.status(500).send({
+			status: false,
+			message: "Require Parameter query"
+		})
+		if (!apikeyInput) return res.json(loghandler.notparam)
+		if (apikeyInput != 'JabamiYumeko') return res.json(loghandler.invalidKey)
+	pinterest(query)
+		 .then(url => {
+	     res.send(url);
+	 })
+	 .catch(err => {
+		res.send(err);
+	})
 })
 
 router.get('/infogempa', async (req, res, next) => {
