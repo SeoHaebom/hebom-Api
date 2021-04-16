@@ -779,7 +779,7 @@ router.get('/pinterest', async (req, res, next) => {
     message : "masukan parameter query"
 })
     if (!apikeyInput) return res.json(loghandler.notparam)
-    if (apikeyInput != 'zahirgans') return res.json(loghandler.invalidKey)
+    if (apikeyInput != 'JabamiYumeko') return res.json(loghandler.invalidKey)
 pinterest(query)
 .then(result => {
     res.json({
