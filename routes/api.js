@@ -29,9 +29,10 @@ var options = require(__path + '/lib/options.js');
 var {
 	Vokal,
 	Base,
-	Pinterest, 
 	Searchnabi,
-    Gempa
+    Gempa, 
+	Pinterest, 
+	Simi
 } = require('./../lib');
 var cookie = "HSID=A7EDzLn3kae2B1Njb;SSID=AheuwUjMojTWvA5GN;APISID=cgfXh13rQbb4zbLP/AlvlPJ2xBJBsykmS_;SAPISID=m82rJG4AC9nxQ5uG/A1FotfA_gi9pvo91C;__Secure-3PAPISID=m82rJG4AC9nxQ5uG/A1FotfA_gi9pvo91C;VISITOR_INFO1_LIVE=RgZLnZtCoPU;LOGIN_INFO=AFmmF2swRQIhAOXIXsKVou2azuz-kTsCKpbM9szRExAMUD-OwHYiuB6eAiAyPm4Ag3O9rbma7umBK-AG1zoGqyJinh4ia03csp5Nkw:QUQ3MjNmeXJ0UHFRS3dzaTNGRmlWR2FfMDRxa2NRYTFiN3lfTEdOVTc4QUlwbUI4S2dlVngxSG10N3ZqcHZwTHBKano5SkN2dDlPSkhRMUtReE42TkhYeUVWS3kyUE1jY2I1QzA1MDZBaktwd1llWU9lOWE4NWhoZV92aDkxeE9vMTNlcG1uMU9rYjhOaDZWdno2ZzN3TXl5TVNhSjNBRnJaMExrQXpoa2xzRVUteFNWZDI5S0Fn;PREF=app=desktop&f4=4000000&al=id;SID=2wezCMTUkWN3YS1VmS_DXaEU84J0pZIQdemM8Zry-uzWm8y1njBpLTOpxSfN-EaYCRSiDg.;YSC=HCowA1fmvzo;__Secure-3PSID=2wezCMTUkWN3YS1VmS_DXaEU84J0pZIQdemM8Zry-uzWm8y1dajgWzlBh9TgKapGOwuXfA.;SIDCC=AJi4QfFK0ri9fSfMjMQ4tOJNp6vOb9emETXB_nf2S05mvr2jBlmeEvlSsQSzPMuJl_V0wcbL1r8;__Secure-3PSIDCC=AJi4QfGeWHx-c4uTpU1rXCciO1p0s2fJWU07KrkZhWyD1Tqi8LyR-kHuBwHY9mViVYu1fRh2PA";
 
@@ -311,6 +312,8 @@ router.get('/tiktod', async (req, res, next) => {
              res.json(loghandler.invalidlink)
          })
 })
+
+
 
 router.get('/tiktod/stalk', async (req, res, next) => {
     var apikeyInput = req.query.apikey,
@@ -770,6 +773,29 @@ router.get('/kisahnabi', async (req, res, next) => {
 		})
 })
 
+router.get('/simi', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            query = req.query.query
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'JabamiYumeko') return res.json(loghandler.invalidKey)
+    if (!query) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
+
+       simi(`${query}`)
+        .then(data => {
+        var result = data;
+             res.json({
+                 status : true,
+                 creator : `${creator}`,
+                 result,
+                 message : `jangan lupa follow ${creator}`
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/pinterest', async (req, res, next) => {
     var query = req.query.query
     var apikeyInput = req.query.apikey
@@ -780,7 +806,7 @@ router.get('/pinterest', async (req, res, next) => {
 })
     if (!apikeyInput) return res.json(loghandler.notparam)
     if (apikeyInput != 'JabamiYumeko') return res.json(loghandler.invalidKey)
-pinterest(query)
+pinterest(`${query}`)
 .then(result => {
     res.json({
         result
