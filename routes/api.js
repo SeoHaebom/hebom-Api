@@ -781,7 +781,8 @@ router.get('/simi', async (req, res, next) => {
 	if(apikeyInput != 'JabamiYumeko') return res.json(loghandler.invalidKey)
     if (!query) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
 
-       simi(`${query}`)
+       fetch(encodeURI(`https://simsumi.herokuapp.com/api?text=${query}&lang=id`))
+        .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
