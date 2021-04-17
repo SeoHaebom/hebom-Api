@@ -781,8 +781,7 @@ router.get('/simi', async (req, res, next) => {
 	if(apikeyInput != 'JabamiYumeko') return res.json(loghandler.invalidKey)
     if (!query) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
 
-       fetch(encodeURI(`https://simsumi.herokuapp.com/api?text=${query}&lang=id`))
-        .then(response => response.json())
+       simi(`${query}`)
         .then(data => {
         var result = data;
              res.json({
@@ -807,7 +806,7 @@ router.get('/pinterest', async (req, res, next) => {
 })
     if (!apikeyInput) return res.json(loghandler.notparam)
     if (apikeyInput != 'JabamiYumeko') return res.json(loghandler.invalidKey)
-pinterest(`${query}`)
+pinterest(query)
 .then(result => {
     res.json({
         result
