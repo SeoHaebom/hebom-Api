@@ -806,7 +806,7 @@ router.get('/pinterest', async (req, res, next) => {
 })
     if (!apikeyInput) return res.json(loghandler.notparam)
     if (apikeyInput != 'JabamiYumeko') return res.json(loghandler.invalidKey)
-pinterest(query)
+pinterest(`${query}`)
 .then(result => {
     res.json({
         result
